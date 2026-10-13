@@ -1,0 +1,22 @@
+/* Token desain (PRD Bab 7.2) — satu-satunya berkas yang perlu diubah bila warna/aset resmi BSI berbeda (A-15, R-06). */
+:root {
+  --teal: #00978C;          /* Teal BSI (primer) — permukaan merek, ikon, progres */
+  --teal-action: #00786F;   /* Varian lebih gelap untuk tombol/tautan agar teks putih memenuhi kontras WCAG AA 4,5:1 */
+  --teal-dark: #00535A;
+  --teal-tint: #E6F5F3;
+  --gold: #F8AD3C;
+  --gold-tint: #FFF6E5;
+  --ink: #1F2933;
+  --ink-soft: #5B6670;
+  --line: #E5E7EB;
+  --page: #F7FAFA;
+  --danger: #D64545;
+  --danger-tint: #FDECEC;
+  --slate-tint: #E8EDF2;
+
+  --cat-kertas: #F8AD3C; --cat-plastik: #00978C; --cat-logam: #5B7083; --cat-kaca: #56B4D3;
+  --cat-minyak: #E07A5F; --cat-elektronik: #6C63B5; --cat-campuran: #9AA5B1;
+
+  --radius-card: 16px;
+  --radius-ctl: 10px;
+}

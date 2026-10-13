@@ -1,0 +1,29 @@
+@import './styles/tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { background: var(--page); color: var(--ink); font-family: Lato, Arial, sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; }
+.tnum, table td, .kpi-value { font-variant-numeric: tabular-nums; }
+*:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+@keyframes shimmer { 0% { background-position: -200px 0; } 100% { background-position: calc(200px + 100%) 0; } }
+.skeleton { background: linear-gradient(90deg, #eef2f2 0, #f7fafa 40px, #eef2f2 80px); background-size: 200px 100%; animation: shimmer 1.2s infinite linear; border-radius: 8px; }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-ctl px-4 font-bold text-sm min-h-[44px] transition select-none disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn text-white; background: var(--teal-action); }
+  .btn-primary:hover:not(:disabled) { background: var(--teal-dark); }
+  .btn-outline { @apply btn bg-white border border-line text-ink hover:bg-page; }
+  .btn-danger { @apply btn text-white; background: var(--danger); }
+  .btn-danger:hover:not(:disabled) { filter: brightness(.92); }
+  .btn-ghost { @apply btn text-teal-dark hover:bg-teal-tint; }
+  .btn-sm { min-height: 36px; padding-left: .75rem; padding-right: .75rem; }
+  .card { @apply bg-white rounded-card shadow-card border border-line; }
+  .input { @apply w-full rounded-ctl border border-line bg-white px-3 min-h-[44px] text-[15px] text-ink placeholder:text-ink-soft focus:border-teal focus:outline-none; }
+  .label { @apply block text-sm font-bold text-ink mb-1; }
+  .th { @apply text-left text-xs font-bold uppercase tracking-wide text-white px-3 py-3; background: var(--teal-dark); }
+  .td { @apply px-3 py-3 text-sm border-b border-line align-middle; }
+}
